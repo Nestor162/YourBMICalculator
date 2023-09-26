@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Calcolatrice IMC</string>
+    <string name="female">Donna</string>
+    <string name="male">Uomo</string>
+</resources>

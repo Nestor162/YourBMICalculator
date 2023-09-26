@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">YourBMICalculator</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
 </resources>
