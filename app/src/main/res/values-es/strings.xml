@@ -9,4 +9,20 @@
     <string name="kg">kg</string>
     <string name="age">Edad</string>
     <string name="calculate">Calcular</string>
+    <string name="result">Resultado</string>
+    <string name="re_calculate">re-calcular</string>
+    <string name="error">Error</string>
+
+    <string name="underweight">Bajo peso</string>
+    <string name="normal">Normal</string>
+    <string name="overweight">Sobrepeso</string>
+    <string name="obese">Obeso</string>
+    <string name="morbidly_obese">Obesidad mórbida</string>
+
+    <string name="underweight_description">Tu peso corporal es inferior al rango saludable para la altura y la edad. Puede ser indicativo de una falta de nutrición adecuada u otros problemas. Considera ganar peso para una mejor salud</string>
+    <string name="normal_description">El peso se encuentra dentro del rango saludable recomendado para la altura y la edad. Mantén tu peso para una salud óptima!</string>
+    <string name="overweight_description">Tienes un exceso de peso corporal por encima del rango saludable para tu altura y edad, lo que puede aumentar tu riesgo de problemas de salud como la diabetes tipo 2 y enfermedades cardíacas</string>
+    <string name="obese_description">Estás en una condición en la que el exceso de grasa corporal acumulada puede tener un impacto negativo en tu salud. Puede aumentar significativamente tu riesgo de enfermedades crónicas.</string>
+    <string name="morbidly_obese_description">Tienes un grado severo de obesidad que representa un riesgo significativo para tu salud. Puede requerir intervención médica y cambios drásticos en tu estilo de vida para abordarla.</string>
+
 </resources>

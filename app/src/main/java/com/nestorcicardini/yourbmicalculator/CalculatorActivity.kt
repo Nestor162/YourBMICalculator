@@ -1,10 +1,12 @@
 package com.nestorcicardini.yourbmicalculator
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
+import androidx.appcompat.widget.AppCompatEditText
+import androidx.appcompat.widget.AppCompatTextView
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.core.widget.doOnTextChanged
@@ -20,17 +22,23 @@ class CalculatorActivity : AppCompatActivity() {
 
     private lateinit var viewMale: CardView
     private lateinit var viewFemale: CardView
-    private lateinit var tvHeightValue: TextView
+    private lateinit var tvHeightValue: AppCompatTextView
     private lateinit var rsHeight: RangeSlider
     private lateinit var btnSubtractWeight: FloatingActionButton
     private lateinit var btnAddWeight: FloatingActionButton
-    private lateinit var tvWeightValue: TextView
-    private lateinit var tvAgeValue: TextView
+    private lateinit var tvWeightValue: AppCompatEditText
+    private lateinit var tvAgeValue: AppCompatEditText
     private lateinit var btnSubtractAge: FloatingActionButton
     private lateinit var btnAddAge: FloatingActionButton
     private lateinit var btnCalculate: AppCompatButton
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    companion object {
+        const val BMI_RESULT = "BMI_RESULT"
+    }
+
+    override
+
+    fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calculator)
         initComponents()
@@ -92,24 +100,35 @@ class CalculatorActivity : AppCompatActivity() {
                 currentAge = text.toString().toInt()
             }
         }
-        btnCalculate.setOnClickListener { calculateBMI() }
+        btnCalculate.setOnClickListener {
+            val result = calculateBMI()
+            navigateToResult(result)
+
+        }
 
     }
 
-    private fun calculateBMI() {
+    private fun navigateToResult(result: Double) {
+        val intent = Intent(this, ResultBMIActivity::class.java)
+        intent.putExtra(BMI_RESULT, result)
+        startActivity(intent)
+    }
+
+    private fun calculateBMI(): Double {
         val df = DecimalFormat("#.##")
         val bmi = currentWeight / (currentHeight.toDouble() / 100 * currentHeight.toDouble() / 100)
-        val result = df.format(bmi).toDouble()
+        return df.format(bmi).toDouble()
     }
 
 
     private fun setWeight() {
-        tvWeightValue.text = currentWeight.toString()
+        tvWeightValue.setText(currentWeight.toString())
     }
 
     private fun setAge() {
-        tvAgeValue.text = currentAge.toString()
+        tvAgeValue.setText(currentAge.toString())
     }
+
 
     private fun toggleGender(isMale: Boolean) {
         setCardColor(viewMale, isMale)

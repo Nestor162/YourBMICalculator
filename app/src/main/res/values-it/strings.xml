@@ -10,4 +10,21 @@
     <string name="kg">kg</string>
     <string name="age">Età</string>
     <string name="calculate">Calcolare</string>
+    <string name="result">Risultato</string>
+    <string name="re_calculate">ri-calcolare</string>
+    <string name="error">Errore</string>
+
+    <string name="underweight">Sottopeso</string>
+    <string name="normal">Normale</string>
+    <string name="overweight">Sovrappeso</string>
+    <string name="obese">Obeso</string>
+    <string name="morbidly_obese">Obesità grave</string>
+
+
+    <string name="underweight_description">Il tuo peso corporeo è al di sotto del range salutare per altezza ed età. Potrebbe indicare una carenza di nutrizione adeguata o altri problemi. Considera l\'aumento di peso per migliorare la tua salute.</string>
+    <string name="normal_description">Il tuo peso rientra nel range salutare raccomandato per altezza ed età. Mantieni questo peso per una salute ottimale!</string>
+    <string name="overweight_description">Hai un eccesso di peso corporeo al di sopra del range salutare per altezza ed età, il che può aumentare il rischio di problemi di salute come il diabete di tipo 2 e le malattie cardiache.</string>
+    <string name="obese_description">Ti trovi in una condizione in cui l\'accumulo di grasso corporeo in eccesso può avere un impatto negativo sulla tua salute. Questo può aumentare significativamente il rischio di malattie croniche.</string>
+    <string name="morbidly_obese_description">Hai un grado grave di obesità che rappresenta un rischio significativo per la salute. Potrebbe richiedere un intervento medico e cambiamenti drastici nello stile di vita per affrontarlo.</string>
+
 </resources>

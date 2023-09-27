@@ -13,6 +13,9 @@
         android:theme="@style/Theme.YourBMICalculator"
         tools:targetApi="31">
         <activity
+            android:name=".ResultBMIActivity"
+            android:exported="false" />
+        <activity
             android:name=".CalculatorActivity"
             android:exported="true">
             <intent-filter>
