@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.core.widget.doOnTextChanged
@@ -15,6 +16,7 @@ class CalculatorActivity : AppCompatActivity() {
 
     private var currentWeight = 60
     private var currentAge = 18
+    private var currentHeight = 120
 
     private lateinit var viewMale: CardView
     private lateinit var viewFemale: CardView
@@ -26,6 +28,7 @@ class CalculatorActivity : AppCompatActivity() {
     private lateinit var tvAgeValue: TextView
     private lateinit var btnSubtractAge: FloatingActionButton
     private lateinit var btnAddAge: FloatingActionButton
+    private lateinit var btnCalculate: AppCompatButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,6 +49,7 @@ class CalculatorActivity : AppCompatActivity() {
         tvAgeValue = findViewById(R.id.tvAgeValue)
         btnSubtractAge = findViewById(R.id.btnSubtractAge)
         btnAddAge = findViewById(R.id.btnAddAge)
+        btnCalculate = findViewById(R.id.btnCalculate)
     }
 
     @SuppressLint("SetTextI18n")
@@ -57,9 +61,10 @@ class CalculatorActivity : AppCompatActivity() {
             toggleGender(false)
         }
         rsHeight.addOnChangeListener { _, value, _ ->
+
             val df = DecimalFormat("#.##")
-            val result = df.format(value)
-            tvHeightValue.text = "$result cm"
+            currentHeight = df.format(value).toInt()
+            tvHeightValue.text = "$currentHeight cm"
         }
         btnAddWeight.setOnClickListener {
             currentWeight++
@@ -87,7 +92,14 @@ class CalculatorActivity : AppCompatActivity() {
                 currentAge = text.toString().toInt()
             }
         }
+        btnCalculate.setOnClickListener { calculateBMI() }
 
+    }
+
+    private fun calculateBMI() {
+        val df = DecimalFormat("#.##")
+        val bmi = currentWeight / (currentHeight.toDouble() / 100 * currentHeight.toDouble() / 100)
+        val result = df.format(bmi).toDouble()
     }
 
 
