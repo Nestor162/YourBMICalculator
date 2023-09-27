@@ -27,34 +27,30 @@ class CalculatorActivity : AppCompatActivity() {
 
     private fun initListeners() {
         viewMale.setOnClickListener {
-            setGenderColor()
-            changeGender()
+            toggleGender(true)
         }
         viewFemale.setOnClickListener {
-            setGenderColor()
-            changeGender()
+            toggleGender(false)
         }
     }
 
-    private fun changeGender() {
-        isMaleSelected = !isMaleSelected
-        isFemaleSelected = !isFemaleSelected
+    private fun toggleGender(isMale: Boolean) {
+        setCardColor(viewMale, isMale)
+        setCardColor(viewFemale, !isMale)
     }
 
-    private fun setGenderColor() {
-        viewMale.setCardBackgroundColor(getCardBgColor(isMaleSelected))
-        viewFemale.setCardBackgroundColor(getCardBgColor(isFemaleSelected))
-    }
 
-    private fun getCardBgColor(isComponentSelected: Boolean): Int {
+    private fun setCardColor(view: CardView, isSelected: Boolean) {
         val bgColorRef =
-            if (isComponentSelected) R.color.background_component_selected
+            if (isSelected) R.color.background_component_selected
             else R.color.background_component
 
-        return ContextCompat.getColor(this, bgColorRef)
+        view.setCardBackgroundColor(ContextCompat.getColor(this, bgColorRef))
     }
 
     private fun initUI() {
-        setGenderColor()
+        toggleGender(true)
     }
 }
+
+
