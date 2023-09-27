@@ -8,5 +8,5 @@
     <string name="add_weight">aumentar peso</string>
     <string name="kg">kg</string>
     <string name="age">Edad</string>
-
+    <string name="calculate">Calcular</string>
 </resources>
