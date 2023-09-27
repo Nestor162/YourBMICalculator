@@ -3,4 +3,9 @@
     <string name="app_name">Calcolatrice IMC</string>
     <string name="female">Donna</string>
     <string name="male">Uomo</string>
+    <string name="height">Altezza</string>
+    <string name="weight">Peso</string>
+    <string name="subtract_weight">diminuire peso</string>
+    <string name="add_weight">aumentare peso</string>
+    <string name="kg">kg</string>
 </resources>

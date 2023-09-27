@@ -2,5 +2,10 @@
     <string name="app_name">TuCalculadoraIMC</string>
     <string name="female">Mujer</string>
     <string name="male">Hombre</string>
+    <string name="height">Altura</string>
+    <string name="weight">Peso</string>
+    <string name="subtract_weight">disminuir peso</string>
+    <string name="add_weight">aumentar peso</string>
+    <string name="kg">kg</string>
 
 </resources>
