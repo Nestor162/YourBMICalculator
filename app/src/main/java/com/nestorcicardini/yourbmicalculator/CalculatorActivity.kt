@@ -6,9 +6,7 @@ import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 
 class CalculatorActivity : AppCompatActivity() {
-
-    private var isMaleSelected: Boolean = true
-    private var isFemaleSelected: Boolean = false
+    
     private lateinit var viewMale: CardView
     private lateinit var viewFemale: CardView
 
