@@ -232,6 +232,70 @@
         app:cardCornerRadius="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/viewWeight"
-        app:layout_constraintTop_toBottomOf="@id/ViewHeight" />
+        app:layout_constraintTop_toBottomOf="@id/ViewHeight">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/age"
+                android:textAllCaps="true"
+                android:textColor="@color/title_text"
+                android:textSize="18sp"
+                android:textStyle="bold"
+
+                />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/tvAgeValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textColor="@color/white"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                tools:text="18" />
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnSubtractAge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:backgroundTint="@color/background_fab"
+                    android:contentDescription="@string/subtract_weight"
+                    android:src="@drawable/ic_minus"
+                    app:borderWidth="0dp"
+                    app:fabSize="mini"
+                    app:tint="@color/white" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnAddAge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/background_fab"
+                    android:contentDescription="@string/add_weight"
+                    android:src="@drawable/ic_plus"
+                    app:borderWidth="0dp"
+                    app:fabSize="mini"
+                    app:tint="@color/white" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

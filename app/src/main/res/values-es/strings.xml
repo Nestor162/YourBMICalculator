@@ -7,5 +7,6 @@
     <string name="subtract_weight">disminuir peso</string>
     <string name="add_weight">aumentar peso</string>
     <string name="kg">kg</string>
+    <string name="age">Edad</string>
 
 </resources>

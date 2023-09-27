@@ -14,6 +14,7 @@ import java.text.DecimalFormat
 class CalculatorActivity : AppCompatActivity() {
 
     private var currentWeight = 60
+    private var currentAge = 18
 
     private lateinit var viewMale: CardView
     private lateinit var viewFemale: CardView
@@ -22,6 +23,9 @@ class CalculatorActivity : AppCompatActivity() {
     private lateinit var btnSubtractWeight: FloatingActionButton
     private lateinit var btnAddWeight: FloatingActionButton
     private lateinit var tvWeightValue: TextView
+    private lateinit var tvAgeValue: TextView
+    private lateinit var btnSubtractAge: FloatingActionButton
+    private lateinit var btnAddAge: FloatingActionButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +43,9 @@ class CalculatorActivity : AppCompatActivity() {
         btnSubtractWeight = findViewById(R.id.btnSubtractWeight)
         btnAddWeight = findViewById(R.id.btnAddWeight)
         tvWeightValue = findViewById(R.id.tvWeightValue)
+        tvAgeValue = findViewById(R.id.tvAgeValue)
+        btnSubtractAge = findViewById(R.id.btnSubtractAge)
+        btnAddAge = findViewById(R.id.btnAddAge)
     }
 
     @SuppressLint("SetTextI18n")
@@ -67,13 +74,29 @@ class CalculatorActivity : AppCompatActivity() {
                 currentWeight = text.toString().toInt()
             }
         }
+        btnAddAge.setOnClickListener {
+            currentAge++
+            setAge()
+        }
+        btnSubtractAge.setOnClickListener {
+            currentAge--
+            setAge()
+        }
+        tvAgeValue.doOnTextChanged { text, _, _, _ ->
+            if (!text.isNullOrEmpty()) {
+                currentAge = text.toString().toInt()
+            }
+        }
 
     }
 
 
-    @SuppressLint("SetTextI18n")
     private fun setWeight() {
         tvWeightValue.text = currentWeight.toString()
+    }
+
+    private fun setAge() {
+        tvAgeValue.text = currentAge.toString()
     }
 
     private fun toggleGender(isMale: Boolean) {
@@ -90,10 +113,12 @@ class CalculatorActivity : AppCompatActivity() {
         view.setCardBackgroundColor(ContextCompat.getColor(this, bgColorRef))
     }
 
+    @SuppressLint("SetTextI18n")
     private fun initUI() {
         toggleGender(true)
         tvHeightValue.text = "120 cm"
         setWeight()
+        setAge()
 
     }
 }
