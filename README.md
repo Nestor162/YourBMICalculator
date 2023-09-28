@@ -1,4 +1,6 @@
-# YourBMICalculator
+
+# <img src="https://github.com/Nestor162/YourBMICalculator/assets/113930607/ebde9ef1-88cc-46e2-aa6b-143f09fdbe33" width="65" height="65"> YourBMICalculator
+
 
 **YourBMICalculator**  is a straightforward, user-friendly app that allows you to calculate your Body Mass Index (BMI) quickly and efficiently. With a clean, intuitive design, our app is optimized to provide you with the results you need without any hassle.
 
